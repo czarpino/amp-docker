@@ -1,0 +1,24 @@
+
+#
+# Default virtual host configuration
+#
+# Do not modify this file as it is tracked by source control.
+
+
+
+<VirtualHost *:80>
+  DocumentRoot /amp-docker/src/public
+  <Directory /amp-docker/src/public>
+    AllowOverride None
+    Require all granted
+    <IfModule mod_rewite.c>
+      Options -Multiviews
+      RewriteEngine On
+      RewriteCond %{REQUEST_FILENAME} !-f
+      RewriteRule ^(.*)$ index.php [QSA,L]
+    </IfModule>
+  </Directory>
+
+  ErrorLog /var/log/apache2/amp_docker_error.log
+  CustomLog /var/log/apache2/amp_docker_access.log combined
+</VirtualHost>

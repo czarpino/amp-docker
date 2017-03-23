@@ -1,0 +1,10 @@
+
+;
+; Default php.ini configuration
+;
+; Do not modify this file as it is tracked by source control.
+
+date.timezone = UTC
+post_max_size=16M
+upload_max_filesize=12M
+extension=imagick.so
