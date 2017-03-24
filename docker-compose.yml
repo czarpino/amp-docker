@@ -17,6 +17,16 @@ services:
     working_dir: /amp-docker/src
     links:
       - db:db
+      
+  php71:
+    build: ./php71
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/amp-docker/src
+    working_dir: /amp-docker/src
+    links:
+      - db:db
 
 volumes:
   db_data:

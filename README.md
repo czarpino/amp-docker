@@ -1,10 +1,11 @@
 # AMP Docker
 
-Dockerized version of the good old AMP stack to get you up and running in no time.
+Dockerized version of the good old AMP stack to get you up and running in no time. There are two PHP containers to choose from: PHP5.6 and PHP7.1. Both use the same database to make testing easy for applications currently on PHP5.6 planning a migration to PHP7.1.
 
 ## What's in the box
 
 - PHP5.6
+- PHP7.1
 - Apache Httpd v2.2 (with mod_php)
 - MySQL 5.7
 
@@ -21,10 +22,15 @@ Dockerized version of the good old AMP stack to get you up and running in no tim
 3. Copy default configuration files into the PHP docker directory
 
         cp amp-docker/defaults/* amp-docker/php56
+        cp amp-docker/defaults/* amp-docker/php71
         
-4. Bring up the AMP stack containers!
+4. Bring up the AMP5.6 or AMP7.1 stack. NOTE: Only one should be running at a time since both use the same port 80.
 
-        docker-compose up
+        docker-compose up php56
+        # OR
+        docker-compose up php71
+        
+5. Checkout your website at `127.0.0.1`
 
 # Initializing a database
 
