@@ -1,7 +1,7 @@
 FROM php:5.6-apache
 
 # Enable PDO
-RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-install pdo_mysql mysqli
 
 # Enable intl
 RUN apt-get update && apt-get install -y zlib1g-dev libicu-dev g++
